@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Custom Checkbox</title>
+    <style>
+        .checkbox-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        input[type=checkbox]{
+            visibility: hidden
+        }
+        .input-container{
+            width: 40px;
+            height: 40px;
+            background: #ddd;
+            position: relative
+        }
+        .input-container label{
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            right: 1px;
+            bottom: 1px;
+            background: #fff;
+            cursor: pointer
+
+        }
+        .input-container label:after{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 10px;
+            border: 3px solid #fff;
+            content: '';
+            border-top: none;
+            border-right: none;
+            transform: rotate(-45deg);
+            left: 10px;
+            top: 8px;
+            opacity: 0;
+        }
+        input[type=checkbox]:checked + label:after{
+            opacity: 1
+        }
+        input[type=checkbox]:checked + label{
+            background: green
+        }
+    </style>
+</head>
+<body>
+        <div class="checkbox-container">
+            <div class="input-container">
+                    <input id="custom-checkbox" type="checkbox">
+                    <label for="custom-checkbox"></label>
+            </div>
+        </div>
+</body>
+</html>   
